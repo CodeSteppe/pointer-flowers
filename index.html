@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointer Hearts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1>JavaScript & CSS Animations</h1>
+  <script>
+    document.addEventListener('mousemove', function (e) {
+      let body = document.querySelector('body');
+      let flower = document.createElement('div');
+      let x = e.offsetX;
+      let y = e.offsetY;
+      flower.style.left = x + 'px';
+      flower.style.top = y + 'px';
+
+      let size = Math.random() * 80;
+      flower.style.width = 20 + size + 'px';
+      flower.style.height = 20 + size + 'px';
+
+      let rotation = Math.random() * 360;
+      flower.style.transform = `rotate(${rotation}deg)`
+
+      body.appendChild(flower);
+
+      setTimeout(function () {
+        flower.remove();
+      }, 2000);
+    });
+  </script>
+</body>
+
+</html>

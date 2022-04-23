@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #151515;
+  overflow: hidden;
+}
+
+h1 {
+  display: inline;
+  font-size: 160px;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
+  color: rgb(233, 240, 161);
+  font-family: "Alfa Slab One", cursive;
+}
+
+div {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+  animation: fadeInOut 2s linear infinite;
+}
+
+div:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(flower.png) no-repeat;
+  background-size: contain;
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(300px) rotate(360deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+}
